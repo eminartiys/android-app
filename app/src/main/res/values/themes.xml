@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HacktivApp" parent="Theme.AppCompat.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#ffb1dbe1</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.HacktivApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HacktivApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HacktivApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

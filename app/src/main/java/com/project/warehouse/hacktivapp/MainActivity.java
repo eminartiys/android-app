@@ -1,11 +1,13 @@
 package com.project.warehouse.hacktivapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     AppCompatEditText inputUsername;
     AppCompatEditText inputPassword;
     AppCompatButton btnLogin;
+    AppCompatTextView askUsLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
         inputUsername = findViewById(R.id.input_username);
         inputPassword = findViewById(R.id.input_password);
         btnLogin = findViewById(R.id.btn_login);
+        askUsLabel = findViewById(R.id.text_ask_us);
 
         btnLogin.setOnClickListener(v -> doLogin());
+        askUsLabel.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://www.facebook.com/"));
+            startActivity(intent);
+        });
     }
 
     private void doLogin() {

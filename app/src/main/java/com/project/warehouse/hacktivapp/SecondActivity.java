@@ -27,11 +27,11 @@ public class SecondActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        AndroidVersion cupcake = new AndroidVersion("Cupcake", R.mipmap.ic_launcher);
-        AndroidVersion donut = new AndroidVersion("Donut", R.drawable.ic_launcher_foreground);
-        AndroidVersion eclair = new AndroidVersion("Eclair", R.mipmap.ic_launcher);
-        AndroidVersion froyo = new AndroidVersion("Froyo", R.drawable.ic_launcher_foreground);
-        AndroidVersion gingerbread = new AndroidVersion("Gingerbread", R.mipmap.ic_launcher);
+        AndroidVersion cupcake = new AndroidVersion("Cupcake", "https://colekcolek.com/wp-content/uploads/2012/02/android-cupcake.jpg");
+        AndroidVersion donut = new AndroidVersion("Donut", "https://static.wikia.nocookie.net/android/images/f/f4/Androiddonut.jpg/revision/latest?cb=20111216213427");
+        AndroidVersion eclair = new AndroidVersion("Eclair", "https://i0.wp.com/salamadian.com/wp-content/uploads/2020/06/urutan-versi-android-E-2.jpg?ssl=1");
+        AndroidVersion froyo = new AndroidVersion("Froyo", "https://www.cnet.com/a/img/ealrkjnVoo0IX2l6F7_1oxOwwrU=/940x0/2010/06/30/667454b9-cc2e-11e2-9a4a-0291187b029a/android-22_1.jpg");
+        AndroidVersion gingerbread = new AndroidVersion("Gingerbread", "https://thumbs.dreamstime.com/b/android-gingerbread-flat-design-android-gingerbread-flat-vector-99173593.jpg");
 
         list.add(cupcake);
         list.add(donut);

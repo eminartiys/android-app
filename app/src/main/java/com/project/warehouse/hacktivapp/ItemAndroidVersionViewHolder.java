@@ -2,6 +2,8 @@ package com.project.warehouse.hacktivapp;
 
 import android.view.View;
 
+import com.squareup.picasso.Picasso;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -24,7 +26,9 @@ class ItemAndroidVersionViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(AndroidVersion version) {
-        imageAndroidVersion.setImageDrawable(itemView.getContext().getDrawable(version.getImage()));
+        Picasso.get()
+                .load(version.getImage())
+                .into(imageAndroidVersion);
         titleAndroidVersion.setText(version.getName());
     }
 }

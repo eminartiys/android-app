@@ -7,11 +7,13 @@ package com.project.warehouse.hacktivapp;
 class AndroidVersion {
 
     private String name;
+    private String category;
     private String image;
 
-    public AndroidVersion(String name, String image) {
+    public AndroidVersion(String name, String image, String category) {
         this.name = name;
         this.image = image;
+        this.category = category;
     }
 
     public String getName() {
@@ -20,5 +22,9 @@ class AndroidVersion {
 
     public String getImage() {
         return image;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

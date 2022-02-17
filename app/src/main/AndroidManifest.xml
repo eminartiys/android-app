@@ -11,13 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HacktivApp">
-
         <activity
-            android:name=".SplashscreenActivity"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".SecondActivity"
+            android:name=".ScoreActivity"
             android:exported="true">
 
             <intent-filter>
@@ -26,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+        </activity>
+        <activity
+            android:name=".SplashscreenActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".MainActivity"

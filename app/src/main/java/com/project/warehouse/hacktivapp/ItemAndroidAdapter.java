@@ -34,18 +34,10 @@ class ItemAndroidAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layoutId = 0;
-        if (viewType == TYPE_LEFT) {
-            layoutId = R.layout.item_android_version;
-            View view = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
+        int layoutId = R.layout.item_android_version;
+        View view = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
 
-            return new ItemAndroidVersionViewHolder(view);
-        } else {
-            layoutId = R.layout.item_android_version_reversed;
-            View view = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
-
-            return new ItemAndroidVersionReversedViewHolder(view);
-        }
+        return new ItemAndroidVersionViewHolder(view);
     }
 
     @Override

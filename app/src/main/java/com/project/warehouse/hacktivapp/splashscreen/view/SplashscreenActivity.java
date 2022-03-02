@@ -2,11 +2,11 @@ package com.project.warehouse.hacktivapp.splashscreen.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.project.warehouse.hacktivapp.MainActivity;
+import com.project.warehouse.hacktivapp.SecondActivity;
+import com.project.warehouse.hacktivapp.main.view.MainActivity;
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
 import com.project.warehouse.hacktivapp.login.view.LoginActivity;
@@ -48,7 +48,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
         finish();
     }

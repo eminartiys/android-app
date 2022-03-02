@@ -38,6 +38,16 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
     // query to drop/delete table user
     private static final String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
+    private static final String TABLE_CATEGORY = "category";
+    // user table column
+    private static final String CATEGORY_ID = "category_id";
+    private static final String CATEGORY_NAME = "category_name";
+    // query to create table category
+    private static final String CREATE_CATEGORY_TABLE = "CREATE TABLE " + TABLE_CATEGORY + "("
+            + CATEGORY_ID + " INTEGER PRIMARY KEY, " + CATEGORY_NAME + " TEXT" + ")";
+    // query to drop/delete table user
+    private static final String DROP_CATEGORY_TABLE = "DROP TABLE IF EXISTS " + TABLE_CATEGORY;
+
     public SQLiteDatabaseHandler(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -54,7 +64,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // CRUD Operation for table user
+    // Create-Read-Update-Delete Operation for table user
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 

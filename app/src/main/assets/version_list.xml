@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<versions>
+
+    <version>
+        <name>Cupcake</name>
+        <image>https://colekcolek.com/wp-content/uploads/2012/02/android-cupcake.jpg</image>
+    </version>
+
+    <version>
+        <name>Donut</name>
+        <image>https://static.wikia.nocookie.net/android/images/f/f4/Androiddonut.jpg</image>
+    </version>
+
+    <version>
+        <name>Eclair</name>
+        <image>https://i0.wp.com/salamadian.com/wp-content/uploads/2020/06/urutan-versi-android-E-2.jpg?ssl=1</image>
+    </version>
+</versions>

@@ -32,7 +32,7 @@
             android:exported="true" >
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".main.view.MainActivity"
             android:exported="true" />
     </application>
 

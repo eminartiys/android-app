@@ -10,6 +10,9 @@ class AndroidVersion {
     private String category;
     private String image;
 
+    public AndroidVersion() {
+    }
+
     public AndroidVersion(String name, String image, String category) {
         this.name = name;
         this.image = image;
@@ -26,5 +29,17 @@ class AndroidVersion {
 
     public String getCategory() {
         return category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

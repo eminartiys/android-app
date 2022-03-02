@@ -1,7 +1,6 @@
 package com.project.warehouse.hacktivapp;
 
 import android.view.View;
-
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;

@@ -11,6 +11,7 @@ import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
 import com.project.warehouse.hacktivapp.login.view.LoginActivity;
 import com.project.warehouse.hacktivapp.model.User;
+import com.project.warehouse.hacktivapp.source.view.SourceActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,7 +49,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, SourceActivity.class);
         startActivity(intent);
         finish();
     }

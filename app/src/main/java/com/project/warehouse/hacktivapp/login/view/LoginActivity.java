@@ -11,6 +11,7 @@ import com.project.warehouse.hacktivapp.main.view.MainActivity;
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
 import com.project.warehouse.hacktivapp.model.User;
+import com.project.warehouse.hacktivapp.source.view.SourceActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -60,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putBoolean("IS_LOGIN", true);
                 editor.apply();
 
-                Intent intent = new Intent(this, SecondActivity.class);
+                Intent intent = new Intent(this, SourceActivity.class);
                 startActivity(intent);
                 finish();
             }

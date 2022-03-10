@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
-import com.project.warehouse.hacktivapp.main.view.MainActivity;
+import com.project.warehouse.hacktivapp.main.MainActivity;
 import com.project.warehouse.hacktivapp.model.User;
 
 import androidx.appcompat.app.AppCompatActivity;

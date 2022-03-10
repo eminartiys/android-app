@@ -1,8 +1,10 @@
-package com.project.warehouse.hacktivapp;
+package com.project.warehouse.hacktivapp.version;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.project.warehouse.hacktivapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

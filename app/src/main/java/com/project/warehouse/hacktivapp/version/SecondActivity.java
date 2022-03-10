@@ -1,4 +1,4 @@
-package com.project.warehouse.hacktivapp;
+package com.project.warehouse.hacktivapp.version;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.project.warehouse.hacktivapp.model.User;
+import com.project.warehouse.hacktivapp.R;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

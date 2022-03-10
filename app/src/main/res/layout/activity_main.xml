@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".main.view.MainActivity"
-    android:padding="16dp">
+    tools:context=".main.MainActivity"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:clipToPadding="false">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_ask_us"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:text="Ask us for detail"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/view_film_list_item"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

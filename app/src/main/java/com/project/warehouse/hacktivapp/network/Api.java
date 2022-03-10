@@ -1,6 +1,7 @@
 package com.project.warehouse.hacktivapp.network;
 
 import com.project.warehouse.hacktivapp.model.CovidCaseResponse;
+import com.project.warehouse.hacktivapp.model.Film;
 import com.project.warehouse.hacktivapp.model.SourceResponse;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import retrofit2.http.GET;
 public interface Api {
 
     String BASE_URL = "https://newsapi.org/v1/";
+    String BASE_URL_GHIBLI = "https://ghibliapi.herokuapp.com/";
     String BASE_URL_COVID = "https://corona.lmao.ninja/v2/";
 
     @GET("sources")
@@ -25,4 +27,8 @@ public interface Api {
 
     @GET("states")
     Call<List<CovidCaseResponse>> getAllStatesCases();
+
+    // Ghibli region
+    @GET("films")
+    Call<List<Film>> getAllFilms();
 }

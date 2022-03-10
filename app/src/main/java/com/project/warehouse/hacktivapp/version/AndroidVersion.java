@@ -1,4 +1,4 @@
-package com.project.warehouse.hacktivapp;
+package com.project.warehouse.hacktivapp.version;
 
 /**
  * Created by eminartiys on 14/02/22.

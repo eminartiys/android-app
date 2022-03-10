@@ -18,11 +18,7 @@
             android:name=".splashscreen.view.SplashscreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".source.view.SourceActivity"
@@ -31,14 +27,20 @@
             android:name=".login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ScoreActivity"
+            android:name=".score.ScoreActivity"
             android:exported="true" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".version.SecondActivity"
             android:exported="true" />
         <activity
-            android:name=".main.view.MainActivity"
-            android:exported="true" />
+            android:name=".main.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

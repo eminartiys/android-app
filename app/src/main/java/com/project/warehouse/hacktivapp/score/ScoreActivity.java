@@ -1,7 +1,9 @@
-package com.project.warehouse.hacktivapp;
+package com.project.warehouse.hacktivapp.score;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.project.warehouse.hacktivapp.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;

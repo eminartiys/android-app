@@ -5,11 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.project.warehouse.hacktivapp.SecondActivity;
-import com.project.warehouse.hacktivapp.main.view.MainActivity;
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
-import com.project.warehouse.hacktivapp.login.view.LoginActivity;
+import com.project.warehouse.hacktivapp.login.LoginActivity;
 import com.project.warehouse.hacktivapp.model.User;
 import com.project.warehouse.hacktivapp.source.view.SourceActivity;
 

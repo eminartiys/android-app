@@ -12,13 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
-            android:name=".source.view.SourceActivity"
-            android:exported="true" />
-        <activity
-            android:name=".login.view.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ScoreActivity"
+            android:name=".covid.CovidActivity"
             android:exported="true" />
         <activity
             android:name=".splashscreen.view.SplashscreenActivity"
@@ -31,8 +25,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".source.view.SourceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ScoreActivity"
+            android:exported="true" />
+        <activity
             android:name=".SecondActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".main.view.MainActivity"
             android:exported="true" />

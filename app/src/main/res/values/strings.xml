@@ -1,25 +1,13 @@
 <resources>
-    <string name="app_name">HacktivApp</string>
+    <string name="app_name">Hacktiv App</string>
 
-    <string name="meet_up_with_my_friends">Meet up with my friends</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <!--Entrance Flow-->
+    <string name="the_one_final_destination_for_your_needs">The one final destination for your needs</string>
+    <string name="new_user_register_here">New user? Register here.</string>
+    <string name="already_a_member_login_here">Already a member? Login here.</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="staff_login">Staff Login</string>
+    <string name="about">About</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <string name="our_tools_and_more">Our tools and more</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 </resources>

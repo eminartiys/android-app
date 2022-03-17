@@ -1,15 +1,17 @@
-package com.project.warehouse.hacktivapp.splashscreen.view;
+package com.project.warehouse.hacktivapp.splashscreen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
+import com.project.warehouse.hacktivapp.entrance.EntranceActivity;
 import com.project.warehouse.hacktivapp.login.LoginActivity;
+import com.project.warehouse.hacktivapp.main.MainActivity;
 import com.project.warehouse.hacktivapp.model.User;
-import com.project.warehouse.hacktivapp.source.view.SourceActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,15 +25,23 @@ public class SplashscreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splashscreen);
 
         databaseHandler = new SQLiteDatabaseHandler(this);
-
-        // navigate to
         createUser();
-        navigateTo();
+
+        Handler handler = new Handler();
+        handler.postDelayed(this::navigateTo, 5000);
+    }
+
+    private void createUser() {
+        User admin = new User("admin", "admin", "0812345678", "123456");
+        User staff = new User("staff", "staff", "0812345678", "123456");
+
+        databaseHandler.addUser(admin);
+        databaseHandler.addUser(staff);
     }
 
     private void navigateTo() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isLogin = sharedPreferences.getBoolean("IS_LOGIN", false);
+        boolean isLogin = sharedPreferences.getBoolean("IS_ALREADY_LOGIN", false);
 
         if (isLogin) {
             navigateToMainActivity();
@@ -41,22 +51,15 @@ public class SplashscreenActivity extends AppCompatActivity {
     }
 
     private void navigateToLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, EntranceActivity.class);
         startActivity(intent);
         finish();
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(this, SourceActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
-    private void createUser() {
-        User admin = new User("admin", "Admin", "admin123");
-        databaseHandler.addUser(admin);
-
-        User staff = new User("staff", "Staff", "staff123");
-        databaseHandler.addUser(staff);
-    }
 }

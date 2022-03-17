@@ -1,27 +1,30 @@
 package com.project.warehouse.hacktivapp.model;
 
 /**
- * Created by eminartiys on 01/03/22.
+ * Created by eminartiys on 17/03/22.
  */
 
-public class Category {
+public class SubCategory {
 
     private int id;
     private String name;
     private String image;
+    private int parentCategoryId;
 
-    public Category() {
+    public SubCategory() {
     }
 
-    public Category(String name, String image) {
+    public SubCategory(String name, String image, int parentCategoryId) {
         this.name = name;
         this.image = image;
+        this.parentCategoryId = parentCategoryId;
     }
 
-    public Category(int id, String name, String image) {
+    public SubCategory(int id, String name, String image, int parentCategoryId) {
         this.id = id;
         this.name = name;
         this.image = image;
+        this.parentCategoryId = parentCategoryId;
     }
 
     public int getId() {
@@ -46,5 +49,13 @@ public class Category {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getParentCategoryId() {
+        return parentCategoryId;
+    }
+
+    public void setParentCategoryId(int parentCategoryId) {
+        this.parentCategoryId = parentCategoryId;
     }
 }

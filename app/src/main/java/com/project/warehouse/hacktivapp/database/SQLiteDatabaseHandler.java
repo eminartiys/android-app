@@ -23,7 +23,7 @@ import androidx.annotation.Nullable;
 public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
 
     // Database name
-    private static final String DATABASE_NAME = "Hacktiv-App";
+    private static final String DATABASE_NAME = "HacktivAppDB";
     // Database version
     private static final int DATABASE_VERSION = 1;
 
@@ -35,10 +35,11 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
     private static final String USER_NAME = "name";
     private static final String USER_PHONENUMBER = "phone_number";
     private static final String USER_PASSWORD = "password";
+    private static final String USER_ROLE = "role";
     // query to create table user
     private static final String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_USERNAME + " TEXT,"
-            + USER_NAME + " TEXT," + USER_PHONENUMBER + " TEXT," + USER_PASSWORD + " TEXT" + ")";
+            + USER_NAME + " TEXT," + USER_PHONENUMBER + " TEXT," + USER_PASSWORD + " TEXT," + USER_ROLE + " TEXT" + ")";
     // query to drop/delete table user
     private static final String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
@@ -114,6 +115,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
         values.put(USER_NAME, user.getName());
         values.put(USER_PHONENUMBER, user.getPhoneNumber());
         values.put(USER_PASSWORD, user.getPassword());
+        values.put(USER_ROLE, user.getRole());
 
         db.insert(TABLE_USER, null, values);
     }
@@ -130,7 +132,9 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
             user.setId(Integer.parseInt(cursor.getString(0)));
             user.setUsername(cursor.getString(1));
             user.setName(cursor.getString(2));
-            user.setPassword(cursor.getString(3));
+            user.setPhoneNumber(cursor.getString(3));
+            user.setPassword(cursor.getString(4));
+            user.setRole(cursor.getString(5));
         }
 
         return user;
@@ -149,6 +153,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
             user.setName(cursor.getString(2));
             user.setPhoneNumber(cursor.getString(3));
             user.setPassword(cursor.getString(4));
+            user.setRole(cursor.getString(5));
         }
 
         return user;
@@ -170,6 +175,7 @@ public class SQLiteDatabaseHandler extends SQLiteOpenHelper {
                 user.setName(cursor.getString(2));
                 user.setPhoneNumber(cursor.getString(3));
                 user.setPassword(cursor.getString(4));
+                user.setRole(cursor.getString(5));
 
                 users.add(user);
             } while (cursor.moveToNext());

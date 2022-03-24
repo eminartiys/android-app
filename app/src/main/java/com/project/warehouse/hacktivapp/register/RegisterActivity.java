@@ -1,4 +1,4 @@
-package com.project.warehouse.hacktivapp.login;
+package com.project.warehouse.hacktivapp.register;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,10 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
-    // tipe view      // nama view
     AppCompatEditText inputUsername;
+    AppCompatEditText inputName;
+    AppCompatEditText inputPhoneNumber;
     AppCompatEditText inputPassword;
     AppCompatButton btnLogin;
 
@@ -28,31 +29,46 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         databaseHandler = new SQLiteDatabaseHandler(this);
 
         // Menghubungkan activity ke xml
         inputUsername = findViewById(R.id.input_username);
+        inputName = findViewById(R.id.input_name);
+        inputPhoneNumber = findViewById(R.id.input_phonenum);
         inputPassword = findViewById(R.id.input_password);
         btnLogin = findViewById(R.id.btn_login);
 
-        btnLogin.setOnClickListener(v -> doLogin());
+        btnLogin.setOnClickListener(v -> doRegister());
     }
 
-    private void doLogin() {
+    private void doRegister() {
         String username = inputUsername.getText().toString();
+        String name = inputName.getText().toString();
+        String phoneNum = inputPhoneNumber.getText().toString();
         String password = inputPassword.getText().toString();
 
-        if (username.isEmpty() && password.isEmpty()) {
+        boolean error = false;
+
+        if (name.isEmpty()) {
+            error = true;
+            inputUsername.setError("Nama tidak boleh kosong");
+        }
+        if (username.isEmpty()) {
+            error = true;
             inputUsername.setError("Username tidak boleh kosong");
+        }
+        if (password.isEmpty()) {
+            error = true;
             inputPassword.setError("Password tidak boleh kosong");
-        } else if (username.isEmpty()) {
-            inputUsername.setError("Username tidak boleh kosong");
-        } else if (password.isEmpty()) {
-            inputPassword.setError("Password tidak boleh kosong");
-        } else {
-            User user = databaseHandler.getUserByUsernameAndPassword(username, password);
+        }
+
+        if (!error) {
+            User user = new User();
+            user.setUsername(username);
+            user.setName(name);
+            user.setPhoneNumber(username);
             if (user == null) {
                 Toast.makeText(this, "User not found", Toast.LENGTH_SHORT).show();
             } else {

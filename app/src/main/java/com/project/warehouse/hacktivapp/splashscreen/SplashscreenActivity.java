@@ -9,9 +9,9 @@ import android.preference.PreferenceManager;
 import com.project.warehouse.hacktivapp.R;
 import com.project.warehouse.hacktivapp.database.SQLiteDatabaseHandler;
 import com.project.warehouse.hacktivapp.entrance.EntranceActivity;
-import com.project.warehouse.hacktivapp.login.LoginActivity;
 import com.project.warehouse.hacktivapp.main.MainActivity;
 import com.project.warehouse.hacktivapp.model.User;
+import com.project.warehouse.hacktivapp.recipe.RecipeActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,11 +32,20 @@ public class SplashscreenActivity extends AppCompatActivity {
     }
 
     private void createUser() {
-        User admin = new User("admin", "admin", "0812345678", "123456");
-        User staff = new User("staff", "staff", "0812345678", "123456");
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isAdminAlreadyCreate = sharedPreferences.getBoolean("IS_ADMIN_ALREADY_CREATE", false);
 
-        databaseHandler.addUser(admin);
-        databaseHandler.addUser(staff);
+        if (!isAdminAlreadyCreate) {
+            User admin = new User("admin", "admin", "0812345678", "123456");
+            User staff = new User("staff", "staff", "0812345678", "123456");
+
+            databaseHandler.addUser(admin);
+            databaseHandler.addUser(staff);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("IS_ADMIN_ALREADY_CREATE", true);
+            editor.apply();
+        }
     }
 
     private void navigateTo() {
@@ -57,7 +66,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, RecipeActivity.class);
         startActivity(intent);
         finish();
     }
